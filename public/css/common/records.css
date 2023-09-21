@@ -1,0 +1,639 @@
+@media (min-width: 120px) {
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 4rem auto;
+    width: 100%;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4rem;
+    margin: 3rem;
+  }
+  .card .card-header .brief {
+    font-size: 4rem;
+    cursor: pointer;
+  }
+  .card .card-header .brief::after {
+    content: '\ea09';
+    font-family: 'icomoon';
+    padding: 0 0.5rem;
+    color: red;
+  }
+  .card .card-header .brief_p {
+    display: none;
+    position: absolute;
+    top: 10rem;
+    right: 2rem;
+    padding: 4rem;
+    font-size: 4rem;
+    line-height: 8rem;
+    background-color: #fff;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    z-index: 9;
+  }
+  .card .money_records {
+    width: 95%;
+    margin: 2rem auto;
+  }
+  .card .money_records .apply {
+    text-align: center;
+    font-size: 4rem;
+  }
+  .card .money_records #remark {
+    text-align: center;
+    font-size: 3rem;
+  }
+  .card .money_records .show_h2,
+  .card .money_records .s_show_h2,
+  .card .money_records .t_show_h2 {
+    height: 16rem;
+    text-align: center;
+    line-height: 16rem;
+    font-size: 6rem;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    border-radius: 0.5rem;
+  }
+  .card .money_records .s_show_h2 {
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  }
+  .card .money_records .t_show_h2 {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+  .card .money_records .icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8rem;
+  }
+  .card .money_records .icons button {
+    width: 29rem;
+    height: 8rem;
+    font-size: 4rem;
+    background-color: green;
+    color: #fff;
+    border: 0;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  .card .money_records .icons .pink {
+    background-color: deeppink;
+  }
+  .card .money_records .icons .blue {
+    background-color: blue;
+  }
+  .card .money_records .records {
+    width: 100%;
+  }
+  .card .money_records .records h3 {
+    text-align: center;
+    font-size: 4rem;
+  }
+  .card .money_records .records .select {
+    width: 100%;
+    height: 8rem;
+    line-height: 8rem;
+    margin: 4rem auto;
+    border: 0.2rem solid #ccc;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  .card .money_records .records .select input[type="radio"] {
+    display: none;
+  }
+  .card .money_records .records .select input[type="radio"] + label {
+    width: 12rem;
+    margin-right: 10rem;
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 1rem;
+    font-size: 4rem;
+    cursor: pointer;
+  }
+  .card .money_records .records .select input[type="radio"] + label:last-child {
+    margin-right: 0;
+  }
+  .card .money_records .records .select .current {
+    background-color: red;
+    color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .money_records .records ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    font-size: 4rem;
+    border-radius: 1rem;
+  }
+  .card .money_records .records ul li:nth-child(odd) {
+    color: #fff;
+    background-color: #666;
+  }
+  .card .money_records .records ul li:nth-child(even) {
+    background-color: #999;
+  }
+  .card .money_records .records ul li .title,
+  .card .money_records .records ul li .brief,
+  .card .money_records .records ul li .calculate {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card .money_records h2 {
+    text-align: center;
+    font-size: 5rem;
+  }
+  .card .money_records form {
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 1rem;
+  }
+  .card .money_records form .form-item {
+    width: 100%;
+  }
+  .card .money_records form .form-item .items {
+    margin: 2rem 0 2rem 2rem;
+    line-height: 12rem;
+    font-size: 4rem;
+  }
+  .card .money_records form .form-item .items select,
+  .card .money_records form .form-item .items input {
+    text-indent: 1rem;
+    width: 63%;
+  }
+  .card .money_records form .form-item .items select::placeholder,
+  .card .money_records form .form-item .items input::placeholder {
+    font-size: 3.5rem;
+  }
+  .card .money_records form .form-item .items .radio_set input {
+    width: 4rem;
+  }
+  .card .money_records form .form-item .items .radio_set label {
+    margin-right: 10rem;
+    cursor: pointer;
+  }
+  .card .money_records form .item {
+    display: flex;
+    justify-content: space-around;
+    margin: 4rem auto;
+    width: 92%;
+    background-color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .money_records form .item span,
+  .card .money_records form .item label {
+    height: 8rem;
+    line-height: 8rem;
+    font-size: 4rem;
+  }
+  .card .money_records form .item input {
+    width: 58rem;
+    height: 6rem;
+    margin-top: 1rem;
+    font-size: 4rem;
+  }
+  .card .money_records form .item #shopOrderQty,
+  .card .money_records form .item #order_no,
+  .card .money_records form .item #years,
+  .card .money_records form .item #rent,
+  .card .money_records form .item #type,
+  .card .money_records form .item #num {
+    border: none;
+  }
+  .card .money_records form .item #select_vip,
+  .card .money_records form .item #select_basic {
+    line-height: 10rem;
+  }
+  .card .money_records form .item #select_vip select,
+  .card .money_records form .item #select_basic select {
+    padding: 1rem;
+    font-size: 3rem;
+  }
+  .card .money_records form .item #brief {
+    padding: 2rem;
+    height: 16rem;
+    line-height: 8rem;
+  }
+  .card .money_records form .radio_item {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 2rem auto;
+    width: 92%;
+    background-color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    text-align: center;
+  }
+  .card .money_records form .radio_item p {
+    margin: 2rem;
+    padding-left: 4rem;
+    font-size: 4rem;
+  }
+  .card .money_records form .radio_item p span {
+    float: right;
+    padding-right: 4rem;
+  }
+  .card .money_records form .radio_item .radio_set {
+    text-align: center;
+    margin: 2rem;
+  }
+  .card .money_records form .radio_item .radio_set input {
+    margin: 0 2rem 0 6rem;
+    width: 3rem;
+    height: 8rem;
+    vertical-align: middle;
+  }
+  .card .money_records form .radio_item .radio_set label {
+    flex: 1;
+    width: 50rem;
+    height: 8rem;
+    line-height: 8rem;
+    vertical-align: middle;
+    margin-top: 1rem;
+    font-size: 4rem;
+  }
+  .card .money_records .details {
+    width: 98%;
+    margin: 4rem auto;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 1rem;
+  }
+  .card .money_records .details p {
+    margin: 2rem;
+    height: 8rem;
+    line-height: 8rem;
+    font-size: 4rem;
+  }
+  .card .money_records .details p .floatR {
+    width: 65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card .money_records .details i {
+    margin: 2rem;
+    font-size: 4rem;
+  }
+  .card .money_records .details #deletor {
+    position: absolute;
+    bottom: 9rem;
+    right: 11rem;
+    width: 20rem;
+    height: 6rem;
+    line-height: 6rem;
+    font-size: 4rem;
+    color: #fff;
+    border: 0.2rem solid #666;
+    border-radius: 1rem;
+    background-color: red;
+  }
+  .tran_btn {
+    margin: 8rem auto;
+    width: 88rem;
+    height: 12rem;
+    font-size: 6rem;
+    line-height: 12rem;
+    text-align: center;
+    background-color: green;
+    color: #fff;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+}
+@media (min-width: 750.1px) {
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem auto;
+    width: 71rem;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  .card .card-header .brief {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .card .card-header .brief::after {
+    content: '\ea09';
+    font-family: 'icomoon';
+    padding: 0 0.5rem;
+    color: red;
+  }
+  .card .card-header .brief_p {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    background-color: #fff;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    z-index: 9;
+  }
+  .card .money_records {
+    width: 85%;
+    margin: 2rem auto;
+  }
+  .card .money_records .apply {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .card .money_records #remark {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  .card .money_records .show_h2,
+  .card .money_records .s_show_h2,
+  .card .money_records .t_show_h2 {
+    height: 8rem;
+    text-align: center;
+    line-height: 8rem;
+    font-size: 3rem;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    border-radius: 0.5rem;
+  }
+  .card .money_records .s_show_h2 {
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  }
+  .card .money_records .t_show_h2 {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+  .card .money_records .icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+  .card .money_records .icons button {
+    width: 16rem;
+    height: 4rem;
+    font-size: 2rem;
+    background-color: green;
+    color: #fff;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .card .money_records .icons button select {
+    border: 0;
+    border-radius: 0.35rem;
+  }
+  .card .money_records .icons .pink {
+    background-color: deeppink;
+  }
+  .card .money_records .icons .blue {
+    background-color: blue;
+  }
+  .card .money_records .records {
+    width: 100%;
+  }
+  .card .money_records .records h3 {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  .card .money_records .records .select {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    margin: 2rem auto;
+    border: 0.2rem solid #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  .card .money_records .records .select input[type="radio"] {
+    display: none;
+  }
+  .card .money_records .records .select input[type="radio"] + label {
+    width: 8rem;
+    margin-right: 5rem;
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .card .money_records .records .select input[type="radio"] + label:last-child {
+    margin-right: 0;
+  }
+  .card .money_records .records .select .current {
+    background-color: red;
+    color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .money_records .records ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .card .money_records .records ul li:nth-child(odd) {
+    color: #fff;
+    background-color: #666;
+  }
+  .card .money_records .records ul li:nth-child(even) {
+    background-color: #999;
+  }
+  .card .money_records .records ul li .title,
+  .card .money_records .records ul li .brief,
+  .card .money_records .records ul li .calculate {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card .money_records h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .card .money_records form {
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 0.5rem;
+  }
+  .card .money_records form .form-item {
+    width: 100%;
+  }
+  .card .money_records form .form-item .items {
+    margin-left: 1rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+  }
+  .card .money_records form .form-item .items select,
+  .card .money_records form .form-item .items input {
+    text-indent: 0.5rem;
+    width: 77%;
+  }
+  .card .money_records form .form-item .items select::placeholder,
+  .card .money_records form .form-item .items input::placeholder {
+    font-size: 1.25rem;
+  }
+  .card .money_records form .form-item .items .radio_set input {
+    width: 2rem;
+  }
+  .card .money_records form .form-item .items .radio_set label {
+    margin-right: 5rem;
+  }
+  .card .money_records form .item {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+    width: 92%;
+    background-color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+  }
+  .card .money_records form .item span,
+  .card .money_records form .item label,
+  .card .money_records form .item input {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.25rem;
+  }
+  .card .money_records form .item input {
+    width: 25rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+  }
+  .card .money_records form .item #select_vip,
+  .card .money_records form .item #select_basic {
+    line-height: 5rem;
+  }
+  .card .money_records form .item #select_vip select,
+  .card .money_records form .item #select_basic select {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .card .money_records form .item #brief {
+    padding: 1rem;
+    height: 4rem;
+    line-height: 4rem;
+  }
+  .card .money_records form .radio_item {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1rem auto;
+    width: 92%;
+    background-color: #fff;
+    border: 0.1rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    text-align: center;
+  }
+  .card .money_records form .radio_item p {
+    margin: 1rem;
+    padding-left: 2rem;
+    font-size: 1.25rem;
+  }
+  .card .money_records form .radio_item p span {
+    float: right;
+    padding-right: 2rem;
+  }
+  .card .money_records form .radio_item .radio_set {
+    text-align: center;
+    margin: 2rem;
+  }
+  .card .money_records form .radio_item .radio_set input {
+    margin: 0 1rem 0 3rem;
+    width: 2rem;
+    height: 4rem;
+    vertical-align: middle;
+  }
+  .card .money_records form .radio_item .radio_set label {
+    flex: 1;
+    width: 25rem;
+    height: 3rem;
+    line-height: 3rem;
+    vertical-align: middle;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+  }
+  .card .money_records .details {
+    position: relative;
+    width: 71%;
+    margin: 2rem auto;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 0.5rem;
+  }
+  .card .money_records .details p {
+    margin: 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+  }
+  .card .money_records .details p .floatR {
+    width: 31rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card .money_records .details i {
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+  .card .money_records .details #deletor {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 0.2rem solid #666;
+    border-radius: 0.5rem;
+    background-color: red;
+  }
+  .tran_btn {
+    margin: 4rem auto;
+    width: 55rem;
+    height: 6rem;
+    font-size: 3rem;
+    line-height: 6rem;
+    text-align: center;
+    background-color: green;
+    color: #fff;
+    border: 0.2rem solid #666;
+    box-shadow: 5px 5px 8px -5px #191919;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .pagination .page-item {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+  }
+}

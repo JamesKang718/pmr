@@ -1,0 +1,1754 @@
+//  mobile 模式 =========================================================================================================
+
+@media (min-width: 120px) {
+    body {
+        position        : relative;
+        background-color: #fff;
+        width : 100%;
+
+        // height          : 6000rem;
+        .floatL {
+            float: left;
+        }
+
+        .floatR {
+            float: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .current {
+            background-color: red !important;
+        }
+
+        .flash_success,
+        .flash_alert {
+            width           : 100%;
+            height          : 7rem;
+            text-align      : center;
+            font-size       : 4rem;
+            line-height     : 8rem;
+            background-color: green;
+            color           : #fff;
+        }
+
+        .flash_alert {
+            background-color: red;
+        }
+
+        .switch {
+            /*==設定開關鈕的長寬==*/
+            position           : relative;
+            -webkit-user-select: none;
+            -moz-user-select   : none;
+            -ms-user-select    : none;
+            user-select        : none;
+            margin-left        : 3rem;
+            width              : 13rem;
+            height             : 6rem;
+            line-height        : 6rem;
+        }
+
+        .switch-checkbox {
+            position: absolute;
+            display : none;
+        }
+
+        .switch-label {
+            display      : block;
+            overflow     : hidden;
+            cursor       : pointer;
+            border-radius: 2rem;
+        }
+
+        .switch-txt {
+            display    : block;
+            width      : 200%;
+            margin-left: -100%;
+            transition : margin 0.3s ease-in 0s;
+        }
+
+        .switch-txt::before,
+        .switch-txt::after {
+            display    : block;
+            float      : right;
+            width      : 50%;
+            font-size  : 3rem;
+            color      : #fff;
+            font-weight: bold;
+            box-sizing : border-box;
+        }
+
+        /*==開關鈕底色(開啟時)==*/
+        .switch-txt::after {
+            content     : attr(turnOn);
+            padding-left: 2rem;
+            background  : #1ba0ef;
+            color       : #fff;
+        }
+
+        /*開關鈕底色(關閉時)*/
+        .switch-txt::before {
+            content      : attr(turnOff);
+            padding-right: 2rem;
+            background   : rgb(185, 185, 185);
+            color        : #666;
+            text-align   : right;
+        }
+
+        /*==開關鈕的顏色與大小==*/
+        .switch-Round-btn {
+            position: absolute;
+            display : block;
+
+            width           : 4rem;
+            height          : 4rem;
+            margin          : 0.4rem;
+            background      : #fff;
+            top             : 0.5rem;
+            // bottom       : 0;
+            right           : 8rem;
+
+            border-radius: 2rem;
+            transition   : all 0.3s ease-in 0s;
+        }
+
+        .switch-checkbox:checked+.switch-label .switch-txt {
+            margin-left: 0;
+        }
+
+        .switch-checkbox:checked+.switch-label .switch-Round-btn {
+            right: 0;
+        }
+
+        .rest_announce {
+            // display: none;
+            position: absolute;
+            top: 30rem;
+            right: 0;
+            width: 44rem;
+            // height: 10rem;
+            background-color: #fff;
+            border       : 0.1rem solid #666;
+            box-shadow   : 5px 5px 8px -5px rgba(25, 25, 25, 1);
+            border-radius: 2rem;
+            text-align: center;
+            z-index: 100;
+
+            h3 {
+                margin-top: 6rem;
+                font-size: 5rem;
+                color: red;
+            }
+
+            p {
+                font-size: 4rem;
+                line-height: 8rem;
+                padding: 1rem;
+                color: #666;
+                .rest_time {
+                    display: block;
+                    color: red;
+                }
+            }
+
+            #stop_announce {
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+                font-size: 3rem;
+                cursor: pointer;
+            }
+
+            #close_announce {
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+                font-size: 6rem;
+                font-family: 'icomoon';
+                cursor: pointer;
+            }
+        }
+
+        .rest_mask {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100%;
+            text-align: center;
+            // background-color: #FF3CAC;
+            background-image: linear-gradient(0deg, #124206 10%, #45484d 100%);
+            // background-image: linear-gradient(225deg, #FF3CAC 0%, #580f97 50%, #2B86C5 100%);
+            // background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+            z-index: 100;
+
+            h3 {
+                margin: 6rem;
+                margin-top: 14rem;
+                font-size: 6rem;
+                color: red;
+            }
+
+            p {
+                margin: 2rem;
+                font-size: 4rem;
+                color: #fff;
+            }
+
+            .img_box {
+                margin: 6rem auto;
+                width: 96rem;
+                height: 54rem;
+                overflow: hidden;
+                border-radius: 1rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    // mobile 版 header  start ============================================================================
+    header {
+        display         : flex;
+        justify-content : center;
+        height          : 14rem;
+        background-color: #191919;
+
+        .nav_bar {
+            display        : flex;
+            width          : 98%;
+            justify-content: space-between;
+
+            .logo {
+                position: relative;
+                width   : 33rem;
+
+                h1 a {
+                    position       : absolute;
+                    top            : 2.2rem;
+                    left           : 0;
+                    width          : 31.5rem;
+                    height         : 10rem;
+                    // background     : url('/img/logos/logo.png') no-repeat;
+                    // background-size: 31.5rem 10rem;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    font-size      : 0;
+                    img {
+                        position: absolute;
+                        top     : 0;
+                        left    : 0;
+                        width   : 31.5rem;
+                        height  : 10rem;
+                    }
+                }
+            }
+
+            // 隱藏大螢幕搜索框
+            .search {
+                display: none;
+            }
+
+            .search_mobile {
+                display    : flex;
+                align-items: center;
+
+                #search-icon {
+                    display    : block;
+                    font-family: 'icomoon';
+                    font-size  : 5rem;
+                    color      : #fff;
+                }
+
+                #search-icon-close {
+                    display    : none;
+                    font-family: 'icomoon';
+                    font-size  : 5rem;
+                    color      : #fff;
+                }
+            }
+
+            .user {
+
+                // display: flex;
+                ul {
+                    // position: relative;
+                    display        : flex;
+                    justify-content: space-between;
+                    height         : 14rem;
+
+                    li {
+                        display    : flex;
+                        align-items: center;
+                        line-height: 14rem;
+                        padding    : 0 1rem;
+                        font-size  : 4.75rem;
+                        color      : #fff;
+
+                        a {
+                            display        : flex;
+                            justify-content: center;
+                            align-items    : center;
+                            // position: relative;
+                            color          : #fff;
+
+                            // line-height: 14rem;
+                            #menu {
+                                font-family: 'icomoon';
+                                font-size  : 5rem;
+                            }
+
+                            img {
+                                // position: absolute;
+                                // top: 0rem;
+                                // left: 0rem;
+                                width        : 8.4rem;
+                                height       : 8.4rem;
+                                border-radius: 0.5rem;
+                            }
+                        }
+
+                        &:hover {
+                            border-bottom: 2px solid rgba(245, 181, 6, 0.932);
+                        }
+                    }
+
+                    .logout {
+                        display        : none;
+                        position       : absolute;
+                        justify-content: center;
+                        top            : 14rem;
+                        right          : 8rem;
+                        width          : 20%;
+                        background     : #191919;
+                        z-index        : 111;
+                    }
+
+                    .notice_icon {
+                        position   : relative;
+                        font-family: 'icomoon';
+                        font-size  : 4rem;
+                        color      : red;
+                        padding    : 0 2.5rem 0 0;
+
+                        i {
+                            position        : absolute;
+                            top             : 1.2rem;
+                            left            : 1.8rem;
+                            height          : 3rem;
+                            line-height     : 2.5rem;
+                            font-size       : 3rem;
+                            color           : #ffffff;
+                            background-color: #e60012;
+                            padding         : 0 0.6rem;
+                            border-radius   : 1.4rem 1.4rem 1.4rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // mobile 版 隱藏 搜索框 =========================================================================
+    .search_mobile_input {
+        display: none;
+
+        input[type="search"] {
+            -webkit-appearance: none;
+        }
+
+        form {
+            position        : absolute;
+            top             : 14rem;
+            right           : 0;
+            width           : 100%;
+            height          : 14rem;
+            background-color: #191919;
+            border          : 0.2rem dotted rgba(245, 181, 6, 0.932);
+            display         : flex;
+            justify-content : space-around;
+            align-items     : center;
+
+
+            input[type=search] {
+                flex         : 1;
+                height       : 8.5rem;
+                margin       : 0 0 0 5rem;
+                border       : 0.3rem solid cornflowerblue;
+                border-radius: 2rem 0 0 2rem;
+                font-size    : 5rem;
+                text-indent  : 2rem;
+                outline      : 0;
+                color        : #191919;
+
+                &::placeholder {
+                    font-size: 4rem;
+                    color    : #999;
+                }
+            }
+
+            input[type=submit] {
+                width           : 12rem;
+                height          : 8.5rem;
+                margin          : 0 5rem 0 0;
+                border          : 0.1rem solid #666;
+                border-radius   : 0 .5rem .5rem 0;
+                background-color: cornflowerblue;
+                font-size       : 5rem;
+                color           : #fff;
+                cursor          : pointer;
+            }
+        }
+    }
+
+    // mobile 版  下拉 menu菜單  start =================================================
+    .mask {
+        display   : none;
+        position  : absolute;
+        top       : 14rem;
+        right     : 0;
+        width     : 71rem;
+        border    : 0.2rem solid rgba(245, 181, 6, 0.932);
+        background: rgba(32, 32, 31, 0.932);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+        z-index   : 99;
+
+        ul {
+            li {
+                display        : flex;
+                flex-direction : column;
+                justify-content: start;
+
+                a {
+                    display        : flex;
+                    justify-content: space-between;
+                    margin         : 2.25rem 5rem;
+                    color          : #fff;
+
+                    h3,
+                    p {
+                        margin   : 0;
+                        padding  : 1.2rem;
+                        font-size: 5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    //  mobile 模式 nav =========================================================================================================
+
+    .list_nav {
+        display        : flex;
+        justify-content: space-around;
+        align-items    : center;
+        width          : 100%;
+        height         : 10rem;
+
+        .both_list {
+            position       : relative;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            width          : 40rem;
+
+            span {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                height         : 5rem;
+                font-family    : 'icomoon';
+                font-size      : 6rem;
+                color          : cornflowerblue;
+                cursor         : pointer;
+            }
+
+            a {
+                padding-left: 1rem;
+                font-size   : 4rem;
+                color       : cornflowerblue;
+
+                &:hover {
+                    background-color: #fff;
+                    color           : red;
+                }
+            }
+
+            ul {
+                display        : flex;
+                justify-content: space-around;
+                flex-direction : column;
+                justify-content: start;
+                align-items    : left;
+                width          : 30rem;
+                border         : 2px solid rgba(245, 181, 6, 0.932);
+                background     : rgba(32, 32, 31, 0.932);
+                background     : -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 1)));
+                z-index        : 1;
+
+                li {
+                    display        : flex;
+                    justify-content: space-around;
+                    justify-content: start;
+                    padding        : 4rem 1rem;
+
+                    a {
+                        font-family: 'icomoon';
+                        font-size  : 4rem;
+                        font-weight: 400;
+                        color      : #fff;
+
+                        i {
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        #index_list {
+            display : none;
+            position: absolute;
+            top     : 10rem;
+            left    : 0;
+            z-index : 99;
+        }
+
+        #member_list {
+            display : none;
+            position: absolute;
+            top     : 10rem;
+            left    : 0;
+            z-index : 99;
+        }
+    }
+
+    //  mobile 模式 notice start ==================================================================================================
+    .notice {
+        width     : 99rem;
+        margin    : 0 auto;
+        border    : 2px solid rgba(245, 181, 6, 0.932);
+        background: rgba(32, 32, 31, 0.932);
+
+        h2 {
+            text-align: center;
+            margin    : 2rem;
+            font-size : 5rem;
+            color     : #fff;
+        }
+
+        .top_icon {
+            position   : absolute;
+            top        : 17rem;
+            right      : 6rem;
+            font-family: 'icomoon';
+            font-size  : 4rem;
+            color      : #fff;
+            cursor     : pointer;
+        }
+
+        .top_menu {
+            display   : none;
+            position  : absolute;
+            top       : 23rem;
+            right     : 1rem;
+            width     : 50%;
+            border    : 2px solid rgba(245, 181, 6, 0.932);
+            background: rgba(32, 32, 31, 0.932);
+            z-index: 9;
+
+            .top_option {
+                font-family: 'icomoon';
+                font-size  : 4rem;
+                color      : #fff;
+
+                .all_read {
+                    display: flex;
+                    margin : 4rem 0 2rem 2rem;
+                    cursor : pointer;
+
+                    button {
+                        margin-left     : 2rem;
+                        border          : none;
+                        background-color: black;
+                        color           : #fff;
+                        cursor          : pointer;
+                    }
+                }
+
+                .setting {
+                    font-family: 'icomoon';
+                    font-size  : 5rem;
+                    color      : #fff;
+
+                    .setting_div {
+                        display: flex;
+                        margin : 4rem 0 2rem 2rem;
+
+                        .setting_icon {
+                            margin-right: 2rem;
+                        }
+                    }
+
+                    .notice_item {
+                        position         : relative;
+                        display          : flex;
+                        margin           : 4rem 0 0rem 3rem;
+                        cursor           : pointer;
+
+                        .item_input {
+                            display          : inline-block;
+                            position         : absolute;
+                            top              : 1rem;
+                            left             : 0;
+                            width            : 3rem;
+                            height           : 3rem;
+                        }
+
+                        .item_label {
+                            margin-left: 5rem;
+                        }
+                    }
+
+                    .submit {
+                        margin: 4rem 0 2rem 2rem;
+                    }
+                }
+            }
+        }
+        
+
+
+        //  mobile 模式 notice ul li start ==================================================================================================
+        .notice_ul {
+            display        : flex;
+            flex-direction : column;
+            justify-content: space-between;
+
+            .notice_li {
+                display        : flex;
+                justify-content: space-between;
+                align-items    : center;
+                margin-bottom  : 4rem;
+
+                .notice_image {
+                    width        : 10rem;
+                    height       : 10rem;
+                    margin-left  : 2rem;
+                    border-radius: 3rem;
+
+                    img {
+                        width        : 100%;
+                        height       : 100%;
+                        border-radius: 3rem;
+                    }
+                }
+
+                .brief {
+                    flex  : 1;
+                    margin: 0 1rem;
+                    font-size: 4rem;
+                    color    : #fff;
+
+                    a {
+                        color: #fff;
+                    }
+
+                    .time {
+                        color: #1ba0ef;
+                    }
+                    .content, .time {
+                        margin-left: 2rem;
+                        .read_record_a {
+                            display: inline-block;
+                            margin: 2rem 0 2rem 35rem;
+                            width: 24rem;
+                            height: 8rem;
+                            border: 0.1rem solid #666;
+                            border-radius: 1rem;
+                            text-align: center;
+                            line-height: 8rem;
+                        }
+                    }
+                }
+
+                //  mobile 模式 notice ul li status start ==================================================================================================
+                .status {
+                    position    : relative;
+                    font-family : 'icomoon';
+                    font-size   : 4rem;
+                    margin-right: 2rem;
+                    color    : #fff;
+                    cursor      : pointer;
+
+                    .status_icon {
+                        margin-right: 2rem;
+                    }
+
+                    .inner_option {
+                        display    : none;
+                        position   : absolute;
+                        width      : 50rem;
+                        height     : 8rem;
+                        top        : 7.1rem;
+                        right      : 0;
+                        line-height: 8rem;
+                        border     : 2px solid rgba(245, 181, 6, 0.932);
+                        background : rgba(32, 32, 31, 0.932);
+
+                        .setTop,
+                        .deletor {
+                            display        : flex;
+                            justify-content: space-around;
+                            font-size      : 4rem;
+
+                            button {
+                                margin-left     : 2rem;
+                                border          : none;
+                                background-color: black;
+                                color           : #fff;
+                                cursor          : pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //  mobile 模式 footer start ==================================================================================================
+
+    footer {
+        display         : flex;
+        justify-content : center;
+        background-color: #191919;
+
+        div {
+            display        : flex;
+            width          : 88%;
+            margin         : 3rem 3rem;
+            justify-content: space-between;
+            flex-wrap      : wrap;
+            align-content  : flex-start;
+
+            dl {
+                display       : flex;
+                flex-direction: column;
+                margin        : 3rem 3rem;
+                padding-right : 2rem;
+
+                dt {
+                    margin-bottom: 5rem;
+
+                    a {
+                        font-size  : 5rem;
+                        color      : #fff;
+                        white-space: nowrap;
+                    }
+                }
+
+                dd {
+                    padding-bottom: 5rem;
+
+                    a {
+                        font-size  : 3.2rem;
+                        color      : #fff;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    //  mobile 模式 copyright ======================================================================================================
+
+    .copyright {
+        display         : flex;
+        flex            : 1;
+        height          : 10rem;
+        border-top      : 0.1rem solid #cfd4dc;
+        justify-content : center;
+        background-color: #191919;
+
+        p {
+            margin-top: 3.2rem;
+            font-size : 2.4rem;
+            color     : #fff;
+        }
+    }
+
+    //  mobile 模式 to_top =========================================================================================================
+
+    .to_top {
+        display    : none;
+        position   : fixed;
+        bottom     : 8rem;
+        right      : 2rem;
+        font-family: 'icomoon';
+        font-size  : 5rem;
+        color      : red;
+        z-index    : 9;
+        cursor     : pointer;
+    }
+
+    // 以下都為共用  ---mobile
+    .btn {
+        width              : 100%;
+        height             : 11rem;
+        background-color   : rgb(78, 157, 189);
+        border             : 1px solid #666;
+        font-size          : 5.5rem;
+        line-height        : 11rem;
+        text-indent        : 1rem;
+        color              : #fff;
+        cursor             : pointer;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .alert-ok,
+    .alert-warning {
+        width           : 96%;
+        height          : 8rem;
+        margin          : 2rem 0 2rem 2.5rem;
+        font-size       : 4rem;
+        line-height     : 8rem;
+        text-indent     : 2rem;
+        color           : #fff;
+        background-color: rgb(97, 158, 5);
+        border          : 1px solid #fff;
+        border-radius   : 1rem;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .alert-warning {
+        background-color: red;
+    }
+    
+    .alert_mask {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(32, 32, 31, 0.932);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+        z-index   : 100;
+        .alert_center {
+            display: flex;
+            position: absolute;
+            top: 35%;
+            left: 20%;
+            flex-direction: column;
+            justify-content: space-around;            
+            align-items: center;
+            width: 60rem;
+            height: 40rem;
+            background-color: #fff;
+            border-radius: 1rem;
+            h3 {
+                font-size: 5rem;
+            }
+            p {
+                font-size: 3rem;
+            }
+            .image_box {
+                width: 8rem;
+                height: 8rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .alert_btn {
+                display: flex;
+                justify-content: space-between;
+                width: 34rem;
+                height: 8rem;
+                .confirm, .cancel {
+                    width: 14rem;
+                    border: 0;
+                    border-radius: 0.5rem;
+                    background-color: skyblue;
+                    cursor: pointer;
+                    font-size: 4rem;
+                    color: #fff;
+                    &:hover {
+                        border-bottom: 2px solid rgba(245, 181, 6, 0.932);
+                    }
+                }
+                .cancel {
+                    background-color: red;
+                }
+            }
+        }
+    }
+    .empty {
+        position: relative;
+        margin: 4rem auto;
+        width: 50rem;
+        height: 50rem;
+        border     : 2px solid rgba(245, 181, 6, 0.932);
+        background : rgba(32, 32, 31, 0.932);
+        border-radius: 1rem;
+        overflow     : hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        span {
+            position: absolute;
+            top: 25rem;
+            left: 14rem;
+            font-size: 3rem;
+        }
+    }
+}
+
+//  注意：媒體查詢括號
+
+//  web 模式開始 =========================================================================================================
+
+//  web 模式開始 =========================================================================================================
+
+//  web 模式開始 =========================================================================================================
+
+@media (min-width: 750.1px) {
+
+    body {
+        position        : relative;
+        background-color: #fff;
+
+        // height          : 5000rem;
+        // 隱藏 手機板的 input 輸入框  (這不能放到 .nav_bar 裡面)
+        .search_mobile_input {
+            display: none;
+        }
+
+        .flash_success,
+        .flash_alert {
+            height     : 4rem;
+            font-size  : 2rem;
+            line-height: 4rem;
+        }
+
+        .switch {
+            /*==設定開關鈕的長寬==*/
+            position           : relative;
+            -webkit-user-select: none;
+            -moz-user-select   : none;
+            -ms-user-select    : none;
+            user-select        : none;
+            margin-left        : 1.5rem;
+            width              : 6.5rem;
+            height             : 3rem;
+            line-height        : 3rem;
+        }
+
+        .switch-checkbox {
+            position: absolute;
+            display : none;
+        }
+
+        .switch-label {
+            display      : block;
+            overflow     : hidden;
+            cursor       : pointer;
+            border-radius: 1rem;
+        }
+
+        .switch-txt {
+            display    : block;
+            width      : 200%;
+            margin-left: -100%;
+            transition : margin 0.3s ease-in 0s;
+        }
+
+        .switch-txt::before,
+        .switch-txt::after {
+            display    : block;
+            float      : right;
+            width      : 50%;
+            font-size  : 1.5rem;
+            color      : #fff;
+            font-weight: bold;
+            box-sizing : border-box;
+        }
+
+        /*==開關鈕底色(開啟時)==*/
+        .switch-txt::after {
+            content     : attr(turnOn);
+            padding-left: 1rem;
+            background  : #1ba0ef;
+            color       : #fff;
+        }
+
+        /*開關鈕底色(關閉時)*/
+        .switch-txt::before {
+            content      : attr(turnOff);
+            padding-right: 1rem;
+            background   : rgb(185, 185, 185);
+            color        : #666;
+            text-align   : right;
+        }
+
+        /*==開關鈕的顏色與大小==*/
+        .switch-Round-btn {
+            position        : absolute;
+            display         : block;
+            width           : 2rem;
+            height          : 2rem;
+            margin          : 0.2rem;
+            background      : #fff;
+            top             : 0.25rem;
+            // bottom       : 0;
+            right           : 4rem;
+            border-radius   : 1rem;
+            transition      : all 0.3s ease-in 0s;
+        }
+
+        .switch-checkbox:checked+.switch-label .switch-txt {
+            margin-left: 0;
+        }
+
+        .switch-checkbox:checked+.switch-label .switch-Round-btn {
+            right: 0;
+        }
+
+        .rest_announce {
+            position: absolute;
+            top: 15rem;
+            right: 0;
+            width: 17rem;
+            // height: 10rem;
+            background-color: #fff;
+            border       : 0.1rem solid #666;
+            box-shadow   : 5px 5px 8px -5px rgba(25, 25, 25, 1);
+            border-radius: 1rem;
+            text-align: center;
+            z-index: 100;
+
+            h3 {
+                margin-top: 3rem;
+                font-size: 2rem;
+                color: red;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 3rem;
+                padding: 0.5rem;
+                color: #666;
+                .rest_time {
+                    display: block;
+                    color: red;
+                }
+            }
+
+            #stop_announce {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+            #close_announce {
+                position: absolute;
+                top: 0.5rem;
+                right: 1rem;
+                font-size: 2rem;
+                font-family: 'icomoon';
+                cursor: pointer;
+            }
+        }
+
+        .rest_mask {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100%;
+            text-align: center;
+            // background-color: #FF3CAC;
+            background-image: linear-gradient(0deg, #124206 10%, #45484d 100%);
+            // background-image: linear-gradient(225deg, #FF3CAC 0%, #580f97 50%, #2B86C5 100%);
+            // background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+            z-index: 100;
+
+            h3 {
+                margin: 3rem;
+                margin-top: 7rem;
+                font-size: 3rem;
+                color: red;
+            }
+
+            p {
+                margin: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+
+            .img_box {
+                margin: 3rem auto;
+                width: 48rem;
+                height: 27rem;
+                overflow: hidden;
+                border-radius: 0.5rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    // web 版  header start==============================================================================
+    header {
+        display         : flex;
+        justify-content : center;
+        height          : 7rem;
+        background-color: #191919;
+
+        .nav_bar {
+            display: flex;
+            width  : 88%;
+
+            // web 版 隱藏手機板的 search 搜索框 (這必須在 .nav_bar 裡面)===========================================================            
+            .search_mobile {
+                display: none;
+            }
+
+            .logo {
+                position: relative;
+                display : flex;
+                width   : 15rem;
+
+                h1 a {
+                    position       : absolute;
+                    top            : 1.1rem;
+                    left           : 0;
+                    width          : 15.75rem;
+                    height         : 5rem;
+                    // background     : url('/img/logos/logo.png') no-repeat;
+                    // background-size: 15.75rem 5rem;
+                    border-radius: 0.5rem;
+                    overflow: hidden;
+                    font-size      : 0;
+                    img {
+                        position: absolute;
+                        top     : 0;
+                        left    : 0;
+                        width   : 15.75rem;
+                        height  : 5rem;
+                    }
+                }
+            }
+
+            .search {
+                display: flex;
+                flex   : 1;
+
+                form {
+                    display: flex;
+                    flex   : 1;
+
+                    input[type=search] {
+                        flex         : 1;
+                        height       : 60%;
+                        margin       : 1.5rem 0 1.5rem 3rem;
+                        border       : 0.1rem solid #666;
+                        border-radius: 2rem 0 0 2rem;
+                        font-size    : 1.4rem;
+                        text-indent  : 1.2rem;
+                        outline      : 0;
+                        color        : #191919;
+
+                        &::placeholder {
+                            font-size: 1.6rem;
+                            color    : 999;
+                        }
+                    }
+
+                    input[type=submit] {
+                        width           : 4.2rem;
+                        height          : 60%;
+                        margin          : 1.5rem 1rem 1.5rem 0;
+                        border          : 0.1rem solid #666;
+                        border-radius   : 0 .5rem .5rem 0;
+                        background-color: cornflowerblue;
+                        font-size       : 1.6rem;
+                        color           : #fff;
+                        cursor          : pointer;
+                    }
+                }
+            }
+
+            .user {
+
+                // display: flex;
+                ul {
+                    display        : flex;
+                    justify-content: space-between;
+                    height         : 7rem;
+
+                    li {
+                        display    : flex;
+                        align-items: center;
+                        line-height: 7rem;
+                        padding    : 0 0.5rem;
+                        font-size  : 2.5rem;
+                        color      : #fff;
+
+                        a {
+                            display        : flex;
+                            justify-content: center;
+                            align-items    : center;
+                            // position: relative;
+                            color          : #fff;
+
+                            // line-height: 14rem;
+                            #menu {
+                                font-family: 'icomoon';
+                                font-size  : 2.5rem;
+                            }
+
+                            img {
+                                // position: absolute;
+                                // top: 0rem;
+                                // left: 0rem;
+                                width        : 4.2rem;
+                                height       : 4.2rem;
+                                border-radius: 0.25rem;
+                            }
+                        }
+
+                        &:hover {
+                            border-bottom: 2px solid rgba(245, 181, 6, 0.932);
+                        }
+                    }
+
+                    .logout {
+                        position       : absolute;
+                        justify-content: center;
+                        top            : 7rem;
+                        right          : 8rem;
+                        width          : 10%;
+                        background     : #191919;
+                        cursor         : pointer;
+                        z-index        : 111;
+                    }
+
+                    .notice_icon {
+                        position   : relative;
+                        font-family: 'icomoon';
+                        font-size  : 2rem;
+                        color      : red;
+
+                        i {
+                            position        : absolute;
+                            top             : 0.6rem;
+                            left            : 0.9rem;
+                            height          : 1.5rem;
+                            line-height     : 1.25rem;
+                            font-size       : 1.5rem;
+                            color           : #ffffff;
+                            background-color: #e60012;
+                            padding         : 0 0.3rem;
+                            border-radius   : 0.7rem 0.7rem 0.7rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // web 版 下拉 menu 菜單 start ==========================================================================
+    .mask {
+        display        : none;
+        position       : absolute;
+        top            : 7rem;
+        right          : 0;
+        width          : 31rem;
+        border         : 0.1rem solid rgba(245, 181, 6, 0.932);
+        //   background:  rgba(32, 32, 31, 0.932);
+
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+        z-index   : 99;
+
+        ul li {
+            display        : flex;
+            flex-direction : column;
+            justify-content: start;
+
+            a {
+                display        : flex;
+                justify-content: space-between;
+                margin         : 1rem 3rem;
+                color          : #fff;
+
+                h3,
+                p {
+                    padding    : 0.1rem;
+                    font-size  : 1.2rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+
+    //  web 模式 nav ============================================================================================================
+
+    .list_nav {
+        display        : flex;
+        justify-content: space-around;
+        align-items    : center;
+        width          : 100%;
+        height         : 5rem;
+
+        .both_list {
+            position       : relative;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            width          : 30rem;
+
+            span {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                height         : 5rem;
+                font-family    : 'icomoon';
+                font-size      : 3rem;
+                color          : cornflowerblue;
+                cursor         : pointer;
+            }
+
+            a {
+                padding-left: 2rem;
+                font-size   : 2rem;
+                color       : cornflowerblue;
+
+                &:hover {
+                    background-color: #fff;
+                    color           : red;
+                }
+            }
+
+            ul {
+                display        : flex;
+                justify-content: space-around;
+                flex-direction : column;
+                justify-content: start;
+                align-items    : left;
+                width          : 30rem;
+                border         : 2px solid rgba(245, 181, 6, 0.932);
+                background     : rgba(32, 32, 31, 0.932);
+                background     : -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 1)));
+                z-index        : 1;
+
+                li {
+                    display        : flex;
+                    justify-content: space-around;
+                    justify-content: start;
+                    padding        : 1rem 1rem;
+
+                    a {
+                        font-family: 'icomoon';
+                        font-size  : 2rem;
+                        font-weight: 400;
+                        color      : #fff;
+
+                        i {
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        #index_list {
+            display : none;
+            position: absolute;
+            top     : 5rem;
+            left    : 0;
+        }
+
+        #member_list {
+            display : none;
+            position: absolute;
+            top     : 5rem;
+            left    : 0;
+        }
+    }    
+    
+    //  web  模式 notice start ==================================================================================================
+    .notice {
+        width     : 99rem;
+        margin    : 0 auto;
+        border    : 2px solid rgba(245, 181, 6, 0.932);
+        background: rgba(32, 32, 31, 0.932);
+
+        h2 {
+            text-align: center;
+            margin    : 1rem;
+            font-size : 2.5rem;
+            color     : #fff;
+        }
+
+        .top_icon {
+            // display   : none;
+            position   : absolute;
+            top        : 8rem;
+            right      : 2.5rem;
+            font-family: 'icomoon';
+            font-size  : 2rem;
+            color      : #fff;
+            cursor     : pointer;
+        }
+
+        .top_menu {
+            display   : none;
+            position  : absolute;
+            top       : 10rem;
+            right     : 1.5rem;
+            width     : 25%;
+            border    : 2px solid rgba(245, 181, 6, 0.932);
+            background: rgba(32, 32, 31, 0.932);
+            z-index: 9;
+
+            .top_option {
+                font-family: 'icomoon';
+                font-size  : 2rem;
+                color      : #fff;
+
+                .all_read {
+                    display: flex;
+                    margin : 2rem 0 1rem 1rem;
+                    cursor : pointer;
+
+                    button {
+                        margin-left     : 1rem;
+                        border          : none;
+                        background-color: black;
+                        color           : #fff;
+                        cursor          : pointer;
+                    }
+                }
+
+                .setting {
+                    font-family: 'icomoon';
+                    font-size  : 2rem;
+                    color      : #fff;
+
+                    .setting_div {
+                        display: flex;
+                        margin : 2rem 0 1rem 1rem;
+
+                        .setting_icon {
+                            margin-right: 1rem;
+                        }
+                    }
+
+                    .notice_item {
+                        position         : relative;
+                        display          : flex;
+                        margin           : 2rem 0 0rem 1.5rem;
+                        cursor           : pointer;
+
+                        .item_input {
+                            display          : inline-block;
+                            position         : absolute;
+                            top              : 0.5rem;
+                            left             : 0;
+                            width            : 1.5rem;
+                            height           : 1.5rem;
+                        }
+
+                        .item_label {
+                            margin-left: 2.5rem;
+                        }
+                    }
+
+                    .submit {
+                        margin: 2rem 0 1rem 1rem;
+                    }
+                }
+            }
+        }
+
+        //  web 模式 notice ul li start ==================================================================================================
+        .notice_ul {
+            display        : flex;
+            flex-direction : column;
+            justify-content: space-between;
+
+            .notice_li {
+                display        : flex;
+                justify-content: space-between;
+                align-items    : center;
+                margin-bottom  : 2rem;
+
+                .notice_image {
+                    width        : 5rem;
+                    height       : 5rem;
+                    margin-left  : 1rem;
+                    border-radius: 1.5rem;
+
+                    img {
+                        width        : 100%;
+                        height       : 100%;
+                        border-radius: 1.5rem;
+                    }
+                }
+
+                .brief {
+                    flex  : 1;
+                    margin: 0 0.5rem;
+                    font-size: 2rem;
+                    color    : #fff;
+
+                    .time {
+                        color: #1ba0ef;
+                    }
+                    .content, .time {
+                        margin-left: 1rem;
+                        // cursor: pointer;
+                        .read_record_a {
+                            display: inline-block;
+                            margin: 1rem 0 1rem 42rem;
+                            width: 12rem;
+                            height: 4rem;
+                            border: 0.1rem solid #666;
+                            border-radius: 0.5rem;
+                            text-align: center;
+                            line-height: 4rem;
+                        }
+                    }
+                }
+
+                //  mobile 模式 notice ul li status start ==================================================================================================
+                .status {
+                    position    : relative;
+                    font-family : 'icomoon';
+                    font-size   : 2rem;
+                    margin-right: 1rem;
+                    color    : #fff;
+                    cursor      : pointer;
+
+                    .status_icon {
+                        margin-right: 1rem;
+                    }
+
+                    .inner_option {
+                        display    : none;
+                        position   : absolute;
+                        width      : 25rem;
+                        height     : 4rem;
+                        top        : 1.75rem;
+                        right      : 4rem;
+                        line-height: 4rem;
+                        border     : 2px solid rgba(245, 181, 6, 0.932);
+                        background : rgba(32, 32, 31, 0.932);
+
+                        .setTop,
+                        .deletor {
+                            display        : flex;
+                            justify-content: space-around;
+                            font-size      : 2rem;
+
+                            button {
+                                margin-left     : 2rem;
+                                border          : none;
+                                background-color: black;
+                                color           : #fff;
+                                cursor          : pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //  web 模式 footer =========================================================================================================
+
+    footer {
+        // display         : none !important;
+        display         : flex;
+        justify-content : center;
+        background-color: #191919;
+
+        div {
+            display        : flex;
+            width          : 88%;
+            margin         : 3rem 0;
+            justify-content: space-between;
+            flex-wrap      : wrap;
+            align-content  : flex-start;
+
+            dl {
+                display       : flex;
+                flex-direction: column;
+                margin        : 3rem 0;
+                padding-right : 1rem;
+
+                dt {
+                    margin-bottom: 1.8rem;
+
+                    a {
+                        font-size  : 2.5rem;
+                        color      : #fff;
+                        white-space: nowrap;
+                    }
+                }
+
+                dd {
+                    padding-bottom: 1.8rem;
+
+                    a {
+                        font-size  : 1.6rem;
+                        color      : #fff;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    //  web 模式 copyright ======================================================================================================
+
+    .copyright {
+        display         : flex;
+        flex            : 1;
+        height          : 10rem;
+        border-top      : 0.1rem solid #cfd4dc;
+        justify-content : center;
+        background-color: #191919;
+
+        p {
+            margin-top: 3.2rem;
+            font-size : 1.8rem;
+            color     : #fff;
+        }
+    }
+
+    //  web 模式 to_top =========================================================================================================
+
+    .to_top {
+        bottom   : 2rem;
+        right    : 1rem;
+        font-size: 1.5rem;
+    }
+
+    // 以下都為共用  ---web
+    .btn {
+        width              : 100%;
+        height             : 4rem;
+        background-color   : rgb(78, 157, 189);
+        border             : 1px solid #666;
+        font-size          : 2rem;
+        line-height        : 4rem;
+        text-indent        : 1rem;
+    }
+
+    .alert-ok,
+    .alert-warning {
+        width           : 100%;
+        height          : 4rem;
+        margin          : 1rem 0;
+        font-size       : 1.5rem;
+        line-height     : 4rem;
+        text-indent     : 1rem;
+        color           : #fff;
+        background-color: rgb(97, 158, 5);
+        border          : 1px solid #fff;
+        border-radius   : 0.5rem;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .alert-warning {
+        background-color: red;
+    }
+
+    .alert_mask {
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(32, 32, 31, 0.932);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 32, 31, 0.9)), to(rgba(71, 71, 69, 0.9)));
+        z-index   : 100;
+        .alert_center {
+            display: flex;
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            flex-direction: column;
+            justify-content: space-around;            
+            align-items: center;
+            width: 30rem;
+            height: 20rem;
+            background-color: #fff;
+            border-radius: 1rem;
+            h3 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+            .image_box {
+                width: 4rem;
+                height: 4rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .alert_btn {
+                display: flex;
+                justify-content: space-between;
+                width: 17rem;
+                height: 3rem;
+                .confirm, .cancel {
+                    width: 7rem;
+                    border: 0;
+                    border-radius: 0.25rem;
+                    background-color: skyblue;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    color: #fff;
+                    &:hover {
+                        border-bottom: 2px solid rgba(245, 181, 6, 0.932);
+                    }
+                }
+                .cancel {
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+//  注意：媒體查詢括號
