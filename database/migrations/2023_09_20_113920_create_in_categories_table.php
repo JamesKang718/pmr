@@ -18,6 +18,7 @@ class CreateInCategoriesTable extends Migration
             $table->string('in_title')->nullable()->comment('收入標題');
             $table->string('description')->nullable()->comment('內容描述');
             $table->timestamps();
+            $table->softDeletes('deleted_at')->nullable()->comment('刪除日期');
         });
     }
 

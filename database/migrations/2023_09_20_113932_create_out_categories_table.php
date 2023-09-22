@@ -18,6 +18,7 @@ class CreateOutCategoriesTable extends Migration
             $table->string('out_title')->nullable()->comment('支出標題');
             $table->string('description')->nullable()->comment('內容描述');
             $table->timestamps();
+            $table->softDeletes('deleted_at')->nullable()->comment('刪除日期');
         });
     }
 
