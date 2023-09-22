@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('welcome');
-Route::get('/all', 'HomeController@all')->name('all');
+Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/food', 'HomeController@food')->name('food');
 Route::get('/drink', 'HomeController@drink')->name('drink');
 Route::get('/cloth', 'HomeController@cloth')->name('cloth');

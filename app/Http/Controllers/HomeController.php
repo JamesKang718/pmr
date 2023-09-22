@@ -31,7 +31,7 @@ class HomeController extends Controller
         return view('welcome', compact('user'));
     }
 
-    public function all()
+    public function home()
     {
         $index = 'all';
         $user = Auth::user();

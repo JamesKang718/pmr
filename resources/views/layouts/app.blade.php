@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common/init.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/common/basic.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/common/basic.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/common/records.css') }}" rel="stylesheet">
     @yield('cssLink')
 </head>
