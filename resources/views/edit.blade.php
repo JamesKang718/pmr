@@ -99,7 +99,7 @@
                     </div>
 
                     <div>
-                        <button type="submit" id="submit" class="btn">
+                        <button type="submit" id="submit" class="login_btn">
                             {{ __('確 定 送 出') }}
                         </button>
                     </div>

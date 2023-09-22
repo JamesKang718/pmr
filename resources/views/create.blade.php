@@ -4,7 +4,7 @@
 @section('content')
     <div class="card">
         <a href="/all">
-            <button type="button" class="btn"> 回 前 頁 </button>
+            <button type="button" class="login_btn"> 回 前 頁 </button>
         </a>
         <div class="money_records">
             <div class="icons">
@@ -51,7 +51,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" id="submit" class="btn">
+                    <button type="submit" id="submit" class="login_btn">
                         {{ __('確 定 送 出') }}
                     </button>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" id="submit" class="btn">
+                    <button type="submit" id="submit" class="login_btn">
                         {{ __('確 定 送 出') }}
                     </button>
                 </div>
