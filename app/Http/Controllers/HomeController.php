@@ -243,7 +243,8 @@ class HomeController extends Controller
     }
 
     public function create() {
-        $date  = date("Ymd") . '-' . date("His");
+        $number = MoneyRecord::all()->count() + 1;
+        $date  = date("Ymd") . '-' . $number;
         $inCategories = InCategory::all();
         $outCategories = OutCategory::all();
         return view('create', compact('date', 'inCategories', 'outCategories'));

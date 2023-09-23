@@ -50,7 +50,7 @@
                         <li>
                             <h5 class="title">
                                 <a href="{{route('edit', $moneyRecord->id)}}">
-                                    <span>單據編號：{{ $moneyRecord->record_no }}</span>
+                                    <span>編號：{{ $moneyRecord->record_no }}</span>
                                 </a>
                                 @if (isset($moneyRecord->inCategory->in_title))
                                     <span>存入類別：{{ $moneyRecord->inCategory->in_title }}</span>

@@ -151,6 +151,16 @@
     display: flex;
     justify-content: space-between;
   }
+  .card .money_records .records ul li .title span,
+  .card .money_records .records ul li .brief span,
+  .card .money_records .records ul li .calculate span {
+    font-size: 4rem;
+  }
+  .card .money_records .records ul li .title span:nth-child(even),
+  .card .money_records .records ul li .brief span:nth-child(even),
+  .card .money_records .records ul li .calculate span:nth-child(even) {
+    margin-bottom: 1rem;
+  }
   .card .money_records h2 {
     text-align: center;
     font-size: 5rem;
@@ -507,6 +517,11 @@
   .card .money_records .records ul li .calculate {
     display: flex;
     justify-content: space-between;
+  }
+  .card .money_records .records ul li .title span,
+  .card .money_records .records ul li .brief span,
+  .card .money_records .records ul li .calculate span {
+    font-size: 1.5rem;
   }
   .card .money_records h2 {
     text-align: center;

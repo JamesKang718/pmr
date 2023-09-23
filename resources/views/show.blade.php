@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="card">
-    <a href="/"><button type="button" class="btn"> 回 首 頁 </button></a>
+    <a href="/"><button type="button" class="login_btn"> 回 首 頁 </button></a>
     <div class="card-header">
         <div class="brief">{{ __('說明') }}</div>
         <p class="brief_p">
