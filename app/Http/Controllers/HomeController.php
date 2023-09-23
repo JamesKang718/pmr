@@ -243,7 +243,7 @@ class HomeController extends Controller
     }
 
     public function create() {
-        $number = MoneyRecord::where('created_at', '>', date('Ymd', time() - 86400))->count() + 1;
+        $number = MoneyRecord::where('user_id', Auth::user()->id)->where('created_at', '>', date('Ymd', time() - 86400))->count() + 1;
         $date  = date("Ymd") . '-' . $number;
         $inCategories = InCategory::all();
         $outCategories = OutCategory::all();
