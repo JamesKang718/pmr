@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="card">
-        <a href="/all">
+        <a href="/home">
             <button type="button" class="login_btn"> 回 前 頁 </button>
         </a>
         <div class="money_records">
