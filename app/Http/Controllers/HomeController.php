@@ -265,7 +265,7 @@ class HomeController extends Controller
             'brief' => $request->input('brief'),
             'status' => '已完成',
         ]);
-        return redirect(route('all'));
+        return redirect(route('home'));
     }
 
     public function edit(Request $request, $record_id) {
@@ -293,12 +293,12 @@ class HomeController extends Controller
             'brief' => $request->input('brief'),
             'status' => '已完成',
         ]);
-        return redirect(route('all'));
+        return redirect(route('home'));
     }
 
     public function destroy(Request $request, $record_id) {
         $record = MoneyRecord::findOrFail($record_id);
         $record->delete();
-        return redirect(route('all'));
+        return redirect(route('home'));
     }
 }
