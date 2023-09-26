@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>簡易記帳</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -86,6 +86,9 @@
                     @else
                         簡易記帳
                     @endif
+                </div>
+                <div style="margin: 0 auto">
+                    完全免費若需維護、請EMAIL告知：idcocode@gmail.com
                 </div>
             </div>
         </div>
