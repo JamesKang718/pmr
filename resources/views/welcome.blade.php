@@ -81,7 +81,9 @@
 
             <div class="content">
                 <div style="margin: 0 auto; font-size: 2rem">
-                    {{$user->name}}
+                    @if (auth()->check())
+                        {{$user->name}}
+                    @else
                 </div>
                 <div class="title m-b-md">
                     @if (auth()->check())
