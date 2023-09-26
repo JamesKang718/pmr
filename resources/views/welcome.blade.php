@@ -80,9 +80,12 @@
             @endif
 
             <div class="content">
+                <div style="margin: 0 auto; font-size: 2rem">
+                    {{$user->name}}
+                </div>
                 <div class="title m-b-md">
                     @if (auth()->check())
-                        {{$user->name}}_零用金明細
+                        零用金
                     @else
                         簡易記帳
                     @endif
