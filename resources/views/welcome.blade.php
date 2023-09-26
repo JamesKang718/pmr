@@ -84,7 +84,7 @@
                     @if (auth()->check())
                         {{$user->name}}_零用金明細
                     @else
-                        Pocket Money Records
+                        簡易記帳
                     @endif
                 </div>
             </div>

@@ -20,6 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common/init.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     {{-- <link href="{{ asset('css/common/basic.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/common/records.css') }}" rel="stylesheet">
     @yield('cssLink')
