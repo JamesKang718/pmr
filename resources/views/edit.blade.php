@@ -27,7 +27,8 @@
                     <div class="form-item">
                         <div class="items">
                             <label for="brief">選擇類別：</label>
-                            <select id="in_index" name="in_index" required>
+                            <select id="out_index" name="out_index" required>
+                                <option id="{{ $record->outCategory->id }}" value="{{ $record->outCategory->id }}" checked>{{ $record->outCategory->out_title }}</option>
                                 @foreach($outCategories as $key => $outCategory)
                                     <option id="{{ $outCategory->id }}" value="{{ $outCategory->id }}">{{ $outCategory->out_title }}</option>
                                 @endforeach
@@ -38,7 +39,7 @@
                     <div class="form-item">
                         <div class="items">
                             <label for="out_amount">支出金額：</label>
-                            <input id="out_amount" type="number" pattern="[0-9]*" name="out_amount" value="{{ $record->amount }}" placeholder="請輸入正整數" required>
+                            <input id="out_amount" type="number" pattern="[0-9]*" name="out_amount" value="{{ -$record->amount }}" placeholder="請輸入正整數" required>
                         </div>
                         <div id="out_amount_info"></div>
                     </div>
@@ -75,6 +76,7 @@
                         <div class="items">
                             <label for="in_index">選擇類別：</label>
                             <select id="in_index" name="in_index" required>
+                                <option id="{{ $record->inCategory->id }}" value="{{ $record->inCategory->id }}" checked>{{ $record->inCategory->in_title }}</option>
                                 @foreach($inCategories as $key => $inCategory)
                                     <option id="{{ $inCategory->id }}" value="{{ $inCategory->id }}">{{ $inCategory->in_title }}</option>
                                 @endforeach

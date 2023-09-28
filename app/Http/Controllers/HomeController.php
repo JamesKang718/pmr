@@ -252,18 +252,22 @@ class HomeController extends Controller
 
     public function store(Request $request) {
         if ($request->input('in_index') == null) {
-            $amount = -$request->input('amount');
+            $amount = -$request->input('out_amount');
+            $brief = $request->input('out_brief');
         } else {
-            $amount = $request->input('amount');
+            $amount = $request->input('in_amount');
+            $brief = $request->input('in_brief');
         }
 
+        // dd($request->input('in_index'), $request->input('out_index'),$request->input('in_amount'),$request->input('in_brief'));
+        // dd($request->input('in_index'), $request->input('out_index'));
         MoneyRecord::create([
             'user_id' => $request->user()->id,
             'in_category_id' => $request->input('in_index'),
             'out_category_id' => $request->input('out_index'),
             'record_no' => $request->input('record_no'),
             'amount' => $amount,
-            'brief' => $request->input('brief'),
+            'brief' => $brief,
             'status' => '已完成',
         ]);
         return redirect(route('home'));
@@ -277,21 +281,22 @@ class HomeController extends Controller
     }
 
     public function update(Request $request, $record_id) {
-        // dd($request->all());
         $record = MoneyRecord::findOrFail($record_id);
+        // dd($request->input('in_index'), $request->input('out_index'),$request->input('in_amount'),$request->input('in_brief'));
         if ($request->input('in_index') == null) {
-            $amount = $request->input('amount');
+            $amount = -$request->input('out_amount');
+            $brief = $request->input('out_brief');
         } else {
-            $amount = -$request->input('amount');
+            $amount = $request->input('in_amount');
+            $brief = $request->input('in_brief');
         }
 
         $record->update([
             'user_id' => $request->user()->id,
             'in_category_id' => $request->input('in_index'),
             'out_category_id' => $request->input('out_index'),
-            'record_no' => $request->input('record_no'),
             'amount' => $amount,
-            'brief' => $request->input('brief'),
+            'brief' => $brief,
             'status' => '已完成',
         ]);
         return redirect(route('home'));
