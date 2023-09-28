@@ -37,18 +37,18 @@
 
                     <div class="form-item">
                         <div class="items">
-                            <label for="amount">支出金額：</label>
-                            <input id="amount" type="number" pattern="[0-9]*" name="amount" value="{{ $record->amount }}" placeholder="請輸入正整數" required>
+                            <label for="out_amount">支出金額：</label>
+                            <input id="out_amount" type="number" pattern="[0-9]*" name="out_amount" value="{{ $record->amount }}" placeholder="請輸入正整數" required>
                         </div>
-                        <div id="amount_info"></div>
+                        <div id="out_amount_info"></div>
                     </div>
 
                     <div class="form-item">
                         <div class="items">
-                            <label for="brief">摘要說明：</label>
-                            <input id="brief" type="text" name="brief" value="{{ $record->brief }}" placeholder="請輸入摘要訊息" required>
+                            <label for="out_brief">摘要說明：</label>
+                            <input id="out_brief" type="text" name="out_brief" value="{{ $record->brief }}" placeholder="請輸入摘要訊息" required>
                         </div>
-                        <div id="brief_info"></div>
+                        <div id="out_brief_info"></div>
                     </div>
 
                     <div>
@@ -84,18 +84,18 @@
 
                     <div class="form-item">
                         <div class="items">
-                            <label for="amount">存入金額：</label>
-                            <input id="amount" type="number" pattern="[0-9]*" name="amount" value="{{ $record->amount }}" placeholder="請輸入正整數" required>
+                            <label for="in_amount">存入金額：</label>
+                            <input id="in_amount" type="number" pattern="[0-9]*" name="in_amount" value="{{ $record->amount }}" placeholder="請輸入正整數" required>
                         </div>
-                        <div id="amount_info"></div>
+                        <div id="in_amount_info"></div>
                     </div>
 
                     <div class="form-item">
                         <div class="items">
-                            <label for="brief">摘要說明：</label>
-                            <input id="brief" type="text" name="brief" value="{{ $record->brief }}" placeholder="請輸入摘要訊息" required>
+                            <label for="in_brief">摘要說明：</label>
+                            <input id="in_brief" type="text" name="in_brief" value="{{ $record->brief }}" placeholder="請輸入摘要訊息" required>
                         </div>
-                        <div id="brief_info"></div>
+                        <div id="in_brief_info"></div>
                     </div>
 
                     <div>
@@ -122,41 +122,66 @@
                 $("#in_form").slideUp();
             })
 
-            // deposit 輸入驗證 規則
-            $("#deposit").on('blur', function() {
-                var depositInput = this.value;
-                var reg = /^[1-9]\d*$/;
-                if (depositInput !== '') {
-                    if (!reg.test(depositInput)) {
-                        $("#deposit").val('');
-                        $("#in_Info").addClass("alert-warning").show().html("僅能輸入：正整數且不能為 0");
+            // out_amount 輸入驗證 規則
+            $("#out_amount").on('blur', function() {
+                let amountInput = this.value;
+                let reg = /^[1-9]\d*$/;
+                if (amountInput !== '') {
+                    if (!reg.test(amountInput)) {
+                        $("#out_amount").val('');
+                        $("#out_amount_info").addClass("alert-warning").show().html("僅能輸入：正整數且不能為 0");
                         setTimeout(function() {
-                            $("#in_Info").hide();
+                            $("#out_amount_info").hide();
                         }, 2000);
                         return;
                     }
                 }
             })
 
-            // brief 輸入驗證 規則
-            $("#brief").on("input", function() {
-                var briefInput = this.value;
-                var reg = /^[0-9]+$/;
+            // out_brief 輸入驗證 規則
+            $("#out_brief").on("blur", function() {
+                let briefInput = this.value;
+                let reg = /^[\u4E00-\u9FA5A-Za-z0-9_\-，.、 $。，、！/=//：< >:？?,()「」～"。;./@& %]+$/;
                 if (briefInput !== '') {
                     if (!reg.test(briefInput)) {
-                        $("#brief").val('');
-                        $("#brief_info").addClass("alert-warning").show().html("僅能輸入：阿拉伯數字(帳號末5碼)");
+                        $("#out_brief").val('');
+                        $("#out_brief_info").addClass("alert-warning").show().html("僅：中、英文、数字、_-，.、 $。，、！/=//：< >:？?,()「」～。;./@& %");
                         setTimeout(function() {
-                            $("#brief_info").hide();
+                            $("#out_brief_info").hide();
                         }, 2000);
                         return;
-                    } else {
-                        if(briefInput.length == 5) {
-                            $("#submit").removeAttr("disabled").css('background-color', 'green');
-                            $("#brief").on("input", function() {
-                                window.location.reload();
-                            })
-                        }
+                    }
+                }
+            })
+
+            // in_amount 輸入驗證 規則
+            $("#in_amount").on('blur', function() {
+                let amountInput = this.value;
+                let reg = /^[1-9]\d*$/;
+                if (amountInput !== '') {
+                    if (!reg.test(amountInput)) {
+                        $("#in_amount").val('');
+                        $("#in_amount_info").addClass("alert-warning").show().html("僅能輸入：正整數且不能為 0");
+                        setTimeout(function() {
+                            $("#in_amount_info").hide();
+                        }, 2000);
+                        return;
+                    }
+                }
+            })
+
+            // in_brief 輸入驗證 規則
+            $("#in_brief").on("blur", function() {
+                let briefInput = this.value;
+                let reg = /^[\u4E00-\u9FA5A-Za-z0-9_\-，.、 $。，、！/=//：< >:？?,()「」～"。;./@& %]+$/;
+                if (briefInput !== '') {
+                    if (!reg.test(briefInput)) {
+                        $("#in_brief").val('');
+                        $("#in_brief_info").addClass("alert-warning").show().html("僅：中、英文、数字、_-，.、 $。，、！/=//：< >:？?,()「」～。;./@& %");
+                        setTimeout(function() {
+                            $("#in_brief_info").hide();
+                        }, 2000);
+                        return;
                     }
                 }
             })
