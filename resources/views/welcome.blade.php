@@ -93,7 +93,7 @@
                     @endif
                 </div>
                 <div style="margin: 0 auto">
-                    完全免費若需維護、請EMAIL告知：idcocode@gmail.com
+                    由<a href="https://i58d.com"> i58d </a>提供，使用完全免費，若需維護、請EMAIL告知：idcocode@gmail.com
                 </div>
             </div>
         </div>

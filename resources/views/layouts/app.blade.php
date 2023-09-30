@@ -3,11 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="簡易記帳是一個免費的記帳軟體，非常適合學生或小資家族使用！">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="簡易記帳，學生記帳，社會新鮮人記帳、記帳練習、免費記帳、免費軟體、記帳軟體、免費記帳軟體、記帳幫手">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', '簡易記帳') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,7 +27,6 @@
     <link href="{{ asset('css/common/init.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/vnd.microsoft.icon">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
-    {{-- <link href="{{ asset('css/common/basic.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/common/records.css') }}" rel="stylesheet">
     @yield('cssLink')
 </head>
