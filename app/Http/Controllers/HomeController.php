@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\InCategory;
 use App\MoneyRecord;
 use App\OutCategory;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('welcome', compact('user'));
+        $userQty = User::all()->count();
+        return view('welcome', compact('user', 'userQty'));
     }
 
     public function home()
