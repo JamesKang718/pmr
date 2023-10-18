@@ -15,7 +15,7 @@
             <button type="button" class="pink">
                 <select id="in_index" name="in_index">
                     <option>收入選項</option>
-                    <option id="all" value="all" >全部紀錄</option>
+                    <option value="home" >全部紀錄</option>
                     @foreach($inCategories as $key => $inCategory)
                         @if ($index == $inCategory->index)
                             <option id="{{ $inCategory->id }}" value="{{ $inCategory->index }}" selected>{{ $inCategory->in_title }}</option>
@@ -29,7 +29,7 @@
             <button type="button" class="blue">
                 <select id="out_index" name="out_index">
                     <option>支出選項</option>
-                    <option id="all" value="all" >全部紀錄</option>
+                    <option value="home">全部紀錄</option>
                     @foreach($outCategories as $key => $outCategory)
                         @if ($index == $outCategory->index)
                             <option id="{{ $outCategory->id }}" value="{{ $outCategory->index }}" selected>{{ $outCategory->out_title }}</option>
